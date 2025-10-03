@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acessibilidade Urbana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-dom/server": "https://esm.sh/react-dom@^19.1.0/server",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.9.0"
+  }
+}
+</script>
+<style>
+  /* Estilos para Acessibilidade */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #06b6d4; /* cyan-400 */
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Foco visível aprimorado para todos os elementos interativos */
+  :is(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid #22d3ee; /* cyan-400 */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px rgba(34, 211, 238, 0.3);
+  }
+
+  /* Modo de Alto Contraste */
+  .high-contrast {
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+    --bg-tertiary: #222222;
+    --text-primary: #ffffff;
+    --text-secondary: #eeeeee;
+    --accent-color: #00ffff;
+  }
+  .high-contrast body { background-color: var(--bg-primary); color: var(--text-primary); }
+  .high-contrast .bg-slate-900 { background-color: var(--bg-primary) !important; }
+  .high-contrast .bg-slate-800, .high-contrast .bg-slate-800\/90 { background-color: var(--bg-secondary) !important; }
+  .high-contrast .bg-slate-700 { background-color: var(--bg-tertiary) !important; }
+  .high-contrast .text-white { color: var(--text-primary) !important; }
+  .high-contrast .text-slate-300, .high-contrast .text-slate-400 { color: var(--text-secondary) !important; }
+  .high-contrast .text-cyan-400 { color: var(--accent-color) !important; }
+  .high-contrast .border-slate-600 { border-color: #888 !important; }
+  .high-contrast button { border: 1px solid var(--accent-color); }
+
+
+  /* Modo de Fonte Grande */
+  .large-text {
+    font-size: 1.15rem;
+  }
+  .large-text h1 { font-size: 2.5rem; }
+  .large-text h2 { font-size: 1.75rem; }
+  .large-text h3 { font-size: 1.5rem; }
+  .large-text input, .large-text select, .large-text textarea, .large-text button {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+  }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900">
+    <a href="#main-content" class="skip-link">Pular para o Conteúdo</a>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

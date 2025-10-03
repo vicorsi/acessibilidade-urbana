@@ -1,0 +1,5 @@
+{
+  "name": "Acessibilidade Urbana",
+  "description": "Um aplicativo da web para encontrar e visualizar pontos de acessibilidade em uma cidade, com uma interface inspirada no Waze. Pesquise por uma cidade para que a IA gere locais acessíveis.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,17 @@
+{
+  "name": "acessibilidade-urbana-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Acessibilidade Urbana app",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "server": "node --env-file=.env server.mjs",
+    "install": "npm install"
+  },
+  "dependencies": {
+    "@google/genai": "^1.9.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  }
+}
